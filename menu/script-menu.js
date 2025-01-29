@@ -33,10 +33,10 @@ function menU(){
             font-size:0px;
             transition: ease 2s;
             `;
-            setTimeout(()=>{
-              closeMenuoK();
-              document.querySelector("#offmenu").classList.remove('openmenu');
-            },1000);
+            // setTimeout(()=>{
+            //   closeMenuoK();
+            //   document.querySelector("#offmenu").classList.remove('openmenu');
+            // },1000);
             count =0;
             // console.log("Menu close!");
         }
@@ -47,9 +47,15 @@ function menU(){
   }
 }
 function CloseBurger(){
+  document.querySelector('#offmenu').style.cssText=`
+            width:00%;
+            opacity:0;
+            font-size:0px;
+            transition: ease 2s;
+            `;
   document.querySelector("#offmenu").classList.remove('openmenu');
   document.getElementsByTagName('body')[0].style.cssText=`overflow:auto`;
-  count =0;
+  count=0;
 }
 function closeMenuoK(){
   document.querySelector('#offmenu').style.cssText=`
@@ -69,3 +75,4 @@ function closeMenuoK(){
 // }else{
 //   console.log('Бургера нет!');
 // }
+document.querySelector('#offmenu').addEventListener('click',opMenu);
