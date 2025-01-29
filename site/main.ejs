@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/site/img/ico.svg">
+    <title>script comment's sustem</title>
+    <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+  <script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "name": "Comments",
+    "headline": "sustem comments",
+    "author" : {
+      "@type" : "Person",
+      "name" : "Amir Navrutdinov",
+      "alternateName": ["Amir Shikarno", "Амир Наврутдинов"],
+      "url" : "https://qucu.ru/resume/Amir.html"
+    },
+    "datePublished": "2024-11-24",
+    "dateModified":"2024-11-24",
+    "image": "https://qucu.ru/public/images/great-job.png",
+    "articleSection": "Супер шикарная система комментаривев",
+    "articleBody": "Эта система комментариев без записи в базу данных. Сообщения записываются массивом в документ json форматa. После чего отправляются с сервера обратно в документ. С использованием одного только javascript. Как говорится в пословице: &quot;все гениальное просто&quot;. Рабочую систему комментариев можно скачать по ссылки с моего гитхаба https://github.com/amir248/comments Вот вам пожалуйста рабочая система комментариев в открытом доступе, это не то что условно бесплатная система комментариев как &quot;дискус&quot;. Сначало она бесплатная, а потом загромаждает все поля видимости жесточайшими ракламными блоками.",
+    "url": "https://nasobe.ru/comments/",
+    "publisher" : {
+      "@type" : "Organization",
+      "name" : "веб мастерская имени Барона Сайтоверстаузена",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nasobe.ru/comments/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://nasobe.ru/comments/"
+      }
+    }
+    }
+    </script>
+</head>
+<body>
+    <p>Самописная система комментариев. Эта система комментариев без записи в базу данных. Сообщения записываются массивом в документ json форматa. После чего отправляются с сервера обратно в документ. С использованием одного только javascript. Как говорится в пословице: "все гениальное просто". Рабочую систему комментариев можно скачать по ссылки с моего гитхаба https://github.com/amir248/comments Вот вам пожалуйста рабочая система комментариев в открытом доступе, это не то что условно бесплатная система комментариев как "дискус". Сначало она бесплатная, а потом загромаждает все поля видимости жесточайшими ракламными блоками. Пример работы системы комментариев: https://amir248.github.io/localhost/ ^_^</p>
+    <span>it's comments script at site</span>
+
+
+<p>&nbsp; &lt;div id="comments" style="width:100%;max-width:100%"&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;a href="https://qucu.ru/comments/" style="font-size: 17px;"&gt;https://qucu.ru/comments/&lt;/a&gt;<br />&nbsp;&nbsp;&nbsp; &lt;script type="text/javascript"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const importantBag={id:"test",site:window.location};<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const script =document.createElement('script');<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const url ='httpы://qucu.ru/comments/script/allow-cors/';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; async function goComments(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; await fetch(url,{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; origin:'https://your.site.ru/',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; method: "POST",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; referrer: "https://your.site.ru/examplePage/",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; referrerPolicy: "origin",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mode:"cors",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; credentials: "omit",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cache: "no-store",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }).then(response=&gt;response.text()).then(result=&gt;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.querySelector('#comments').append(script);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let oK = document.querySelector('#comments &gt; script');<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oK.innerHTML=result;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setTimeout(()=&gt;goComments(),0);<br />&nbsp;&nbsp;&nbsp; &lt;/script&gt;</p>
+
+</strong>
+<!--
+ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        Here commentsBlock!
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-->
+<div id="comments" style="width:100%;max-width:100%"></div>
+<a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+<script type="text/javascript">
+  const site={
+    origin: 'https://nasobe.ru/',
+    referrer: "https://nasobe.ru/comments/"
+    // origin:'192.168.1.104',
+    // referrer:"192.168.1.104/comments"
+  }
+  const importantBag={id:"nasoberu",site:window.location};
+    // const id='nasoberu';// important!!!
+    const script =document.createElement('script');
+    const url ='https://nasobe.ru/comments/allow-cors';
+    async function goComments(){
+      await fetch(url,{
+        origin:site.origin,
+        method: "POST",
+        referrer: site.referrer,
+        referrerPolicy: "origin-when-cross-origin",
+        mode:"cors",
+        credentials: "same-origin",
+        // cache: "no-store",
+      }).then(response=>response.text()).then(result=>{
+        document.querySelector('#comments').append(script);
+        let oK = document.querySelector('#comments > script');
+        oK.innerHTML=result;
+      });
+    };
+    setTimeout(()=>goComments(),300);
+</script>
+</body>
+</html>
