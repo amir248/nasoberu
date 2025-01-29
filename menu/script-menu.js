@@ -24,8 +24,10 @@ function menU(){
           },100);
         }else{
           document.querySelector('#offmenu').style.cssText=`
-            width:0;
-            transition: ease 2s;
+            width:0%;
+            opacity:0;
+            font-size:0px;
+            transition: ease 1s;
             `;
             setTimeout(()=>{
               document.querySelector("#offmenu").classList.remove('openmenu');
