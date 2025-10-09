@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comments system</title>
+</head>
+<body>
+    <main>
+        <!--
+         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                Here commentsBlock!
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      -->
+        <div id="comments" style="width:100%;max-width:100%"></div>
+            <script type="text/javascript">
+            async function loadAssets() {
+            try {
+            // Загружаем CSS
+            const cssResponse = await fetch("https://comments.qucu.ru/style");
+            const cssText = await cssResponse.text();
+            const style = document.createElement("style");
+            style.textContent = cssText;
+            document.head.append(style);
+
+            // Загружаем JS с ID пользователя
+            const jsResponse = await fetch(`https://comments.qucu.ru/js/7`);
+            const jsText = await jsResponse.text();
+            const js = document.createElement("script");
+            js.type = "text/javascript";
+            js.textContent = jsText;
+            document.head.append(js);
+
+            console.log("JS и CSS успешно подгружены для пользователя #7!");
+            } catch (err) {
+            console.error("Ошибка загрузки:", err);
+            }
+            }
+
+            loadAssets();
+        </script>
+    </main>
+</body>
+</html>
