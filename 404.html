@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Not found</title>
+    <style>
+        *{
+            border:none;
+            padding:none;
+        }
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background-color: rgb(27, 27, 27);
+        }
+        main > div{
+            background-color: black;
+            border-radius: 17px;
+            display:grid;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            min-height:98vh;
+        }
+        main > div > h1{
+            font-size:77px;
+            color:yellow;
+        }
+        main > div > h2{
+            color:green;
+        }
+        main > div > a{
+            background-color: yellow;
+            border-radius: 17px;
+            text-decoration: none;
+        }
+        main > div > a > h3{
+            margin:17px;
+            font-size: 33px;
+            color:black;
+        }
+    </style>
 </head>
 <body>
     <main>
-        <h1>404</h1>
-        <h2>PAGE NOT FOUD</h2>
-        <a href="/"><h3>HOME</h3></a>
+        <div>
+            <h1>404</h1>
+            <h2>PAGE NOT FOUD</h2>
+            <a href="/"><h3>HOME</h3></a>
+        </div>
     </main>
 </body>
 </html>
