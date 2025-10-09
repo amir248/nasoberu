@@ -1,42 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>comments system</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Система комментариев — nasobe.ru</title>
+
+  <!-- Structured Data JSON-LD для SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Система комментариев Qucu",
+    "url": "https://nasobe.ru/comments/",
+    "applicationCategory": "DiscussionForum",
+    "creator": {
+      "@type": "Organization",
+      "name": "Qucu.ru",
+      "url": "https://qucu.ru"
+    },
+    "featureList": ["Добавление комментариев", "AJAX-загрузка CSS и JS", "Поддержка CORS"],
+    "operatingSystem": "All"
+  }
+  </script>
+
+  <style>
+    /* Минимальные стили для плавной загрузки */
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    #comments {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-    <main>
-        <div id="comments"></div>
+  <main>
+    <h1>Комментарии к статье</h1>
+    <div id="comments">Загрузка комментариев...</div>
+  </main>
 
   <script>
-    //  window.USER_ID = "<%= userId %>";
-    // document.querySelector("#ID").textContent=window.USER_ID; 
     async function loadAssets() {
       try {
+        console.log("⏳ Загружаем стили и скрипты с comments.qucu.ru ...");
+
         // Загружаем CSS
-        const cssResponse = await fetch("https://comments.qucu.ru/style");
+        const cssResponse = await fetch("https://comments.qucu.ru/style", {
+          mode: "cors",
+          credentials: "include"
+        });
+        if (!cssResponse.ok) throw new Error("Ошибка загрузки CSS");
         const cssText = await cssResponse.text();
         const style = document.createElement("style");
         style.textContent = cssText;
-        document.head.append(style);
+        document.head.appendChild(style);
 
-        // Загружаем JS с ID пользователя
-        const jsResponse = await fetch("https://comments.qucu.ru/js/7");
+        // Загружаем JS (с ID пользователя)
+        const jsResponse = await fetch("https://comments.qucu.ru/js/7", {
+          mode: "cors",
+          credentials: "include"
+        });
+        if (!jsResponse.ok) throw new Error("Ошибка загрузки JS");
         const jsText = await jsResponse.text();
-        const js = document.createElement("script");
-        js.type = "text/javascript";
-        js.textContent = jsText;
-        document.head.append(js);
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.textContent = jsText;
+        document.body.appendChild(script);
 
-        console.log("JS и CSS успешно подгружены для пользователя #admin!");
+        console.log("✅ JS и CSS успешно подгружены с comments.qucu.ru");
       } catch (err) {
-        console.error("Ошибка загрузки:", err);
+        console.error("❌ Ошибка загрузки ресурсов:", err);
+        document.getElementById("comments").textContent =
+          "Ошибка загрузки комментариев. Попробуйте позже.";
       }
     }
 
     loadAssets();
   </script>
-    </main>
 </body>
 </html>
