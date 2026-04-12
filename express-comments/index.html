@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>express-comments</title>
+    <link rel="shortcut icon" href="site/img" type="image/x-icon">
+</head>
+<body>
+
+    <h1><%= title %></h1>
+    <p>Это htmlfile</p>
+    <script>
+        async function loadAssets() {
+try {
+// Загружаем CSS
+const cssResponse = await fetch("https://express.qucu.ru/style");
+const cssText = await cssResponse.text();
+const style = document.createElement("style");
+style.textContent = cssText;
+document.head.append(style);
+
+// Загружаем JS с ID пользователя
+const jsResponse = await fetch(`https://express.qucu.ru/no-captcha/1`);
+const jsText = await jsResponse.text();
+const js = document.createElement("script");
+js.type = "text/javascript";
+js.textContent = jsText;
+document.head.append(js);
+
+console.log("JS и CSS успешно подгружены для пользователя #Your ID!");
+} catch (err) {
+console.error("Ошибка загрузки:", err);
+}
+}
+
+loadAssets();
+    </script>
+    <div id="comments"></div>
+</body>
+</html>
