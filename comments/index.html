@@ -54,7 +54,7 @@
         console.log("⏳ Загружаем стили и скрипты с comments.qucu.ru ...");
 
         // Загружаем CSS
-        const cssResponse = await fetch("https://comments.qucu.ru/style", {
+        const cssResponse = await fetch("https://qucu.ru/comments/style", {
           mode: "cors",
           credentials: "include"
         });
@@ -65,7 +65,7 @@
         document.head.appendChild(style);
 
         // Загружаем JS (с ID пользователя)
-        const jsResponse = await fetch("https://comments.qucu.ru/js/7", {
+        const jsResponse = await fetch("https://qucu.ru/comments/js/7", {
           mode: "cors",
           credentials: "include"
         });
